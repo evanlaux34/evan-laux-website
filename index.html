@@ -3,6 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evan Laux — Creative Strategist & Photographer</title>
+<meta name="description" content="Evan Laux is a creative strategist and photographer. I build brand identities, design with intent, and shoot event, wedding, and travel photography — strategy first, craft always.">
+<link rel="canonical" href="https://www.evanlaux.com/">
+<meta name="theme-color" content="#141210">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Evan Laux">
+<meta property="og:title" content="Evan Laux — Creative Strategist & Photographer">
+<meta property="og:description" content="Brand identity, design, and event, wedding & travel photography. Strategy first, craft always.">
+<meta property="og:url" content="https://www.evanlaux.com/">
+<meta property="og:image" content="https://www.evanlaux.com/uploads/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Evan Laux — Creative Strategist & Photographer">
+<meta name="twitter:description" content="Brand identity, design, and event, wedding & travel photography. Strategy first, craft always.">
+<meta name="twitter:image" content="https://www.evanlaux.com/uploads/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -11,19 +30,68 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 <script src="./image-slot.js"></script>
 <style>
-body{margin:0;background:#141210;font-family:'Space Grotesk',system-ui,sans-serif}
+html,body{margin:0;background:#141210;font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;max-width:100%}
 a{color:inherit;text-decoration:none}
 a:hover{color:#ff5c1a}
 input,textarea,button{font-family:inherit}
+img{max-width:100%}
+*{box-sizing:border-box}
 @keyframes heroUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:translateY(0)}}
 @keyframes heroPortrait{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes badgeSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ Responsive ============ */
+/* Tablet and below */
+@media (max-width:960px){
+  [data-screen-label="Nav"]{padding:18px 30px!important}
+  [data-screen-label="Nav"] nav{gap:22px!important}
+  [data-screen-label="Hero"]{grid-template-columns:1fr!important;min-height:0!important;padding:60px 30px 32px!important;gap:16px!important}
+  [data-screen-label="Hero"] h1{font-size:100px!important}
+  .hero-media{height:auto!important;min-height:360px!important}
+  .hero-portrait{position:relative!important;transform:none!important;width:auto!important;height:auto!important;max-width:74%!important;max-height:500px!important;margin:0 auto!important}
+  .cards-3{grid-template-columns:1fr 1fr!important}
+  #work,#photography{padding:64px 30px!important}
+  #weddings{grid-template-columns:1fr!important;gap:40px!important;padding:64px 30px!important}
+  #about{grid-template-columns:1fr!important;gap:36px!important;padding:64px 30px!important}
+  #contact{padding:64px 30px 56px!important}
+  #contact>div:first-of-type{grid-template-columns:1fr!important;gap:40px!important}
+  #brands{padding:64px 0!important}
+  #brands>div:first-child{padding-left:30px!important;padding-right:30px!important}
+  #brands>div:last-child{padding-left:30px!important;padding-right:30px!important}
+  #work h2,#brands h2,#photography h2{font-size:44px!important}
+  #weddings h2{font-size:42px!important}
+  #about h2{font-size:40px!important}
+  #contact h2{font-size:60px!important}
+}
+/* Phones */
+@media (max-width:600px){
+  [data-screen-label="Nav"]{padding:15px 20px!important}
+  [data-screen-label="Nav"] nav{display:none!important}
+  [data-screen-label="Nav"] > a:first-child{font-size:22px!important}
+  [data-screen-label="Nav"] > a:last-child{padding:10px 16px!important;font-size:12px!important}
+  [data-screen-label="Hero"]{padding:40px 20px 28px!important}
+  [data-screen-label="Hero"] h1{font-size:clamp(54px,15.5vw,90px)!important}
+  .hero-media{min-height:330px!important}
+  .hero-portrait{max-width:86%!important;max-height:400px!important}
+  .hero-disc{width:250px!important;height:250px!important}
+  .cards-3{grid-template-columns:1fr!important;gap:16px!important}
+  #work,#photography,#weddings,#about{padding:52px 20px!important}
+  #contact{padding:52px 20px 44px!important}
+  #brands{padding:52px 0!important}
+  #brands>div:first-child,#brands>div:last-child{padding-left:20px!important;padding-right:20px!important}
+  #work h2,#brands h2,#photography h2,#weddings h2{font-size:36px!important}
+  #about h2{font-size:34px!important}
+  #contact h2{font-size:46px!important}
+  .brand-card{width:80vw!important}
+  .wed-grid{grid-template-rows:repeat(2,150px)!important}
+  #contact>div:last-of-type{flex-direction:column!important;gap:10px!important;align-items:flex-start!important;margin-top:52px!important}
+}
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="width:1440px;background:#141210;color:#f5f1ec">
+<div ref="{{ rootRef }}" style="width:100%;max-width:1440px;margin:0 auto;background:#141210;color:#f5f1ec">
 
   <header data-screen-label="Nav" style="display:flex;align-items:center;justify-content:space-between;padding:26px 56px;border-bottom:1px solid rgba(245,241,236,.08);position:sticky;top:0;z-index:20;background:rgba(20,18,16,.82);backdrop-filter:blur(10px)">
     <a href="#top" onClick="{{ scrollTop }}" style="font: 700 17px 'Space Grotesk',sans-serif; letter-spacing: .02em; font-size: 30px; cursor: pointer">evanlaux<span style="color:#ff5c1a">.</span>com</a>
@@ -51,10 +119,10 @@ input,textarea,button{font-family:inherit}
         </div>
       </div>
       <p style="margin:28px 0 0;max-width:400px;font:400 17px/1.55 'Space Grotesk',sans-serif;color:rgba(245,241,236,.72);animation:heroUp .8s .7s cubic-bezier(.2,.6,.2,1) both">Creative strategist &amp; photographer. I build brands, design with intent, and capture the world in between.</p>
-    </div><div style="position:relative;z-index:1;height:560px;display:flex;align-items:center;justify-content:center;animation:heroPortrait 1s .35s cubic-bezier(.2,.6,.2,1) both">
-      <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:390px;height:390px;border-radius:50%;background:#ff5c1a;z-index:0"></div>
+    </div><div class="hero-media" style="position:relative;z-index:1;height:560px;display:flex;align-items:center;justify-content:center;animation:heroPortrait 1s .35s cubic-bezier(.2,.6,.2,1) both">
+      <div class="hero-disc" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:390px;height:390px;border-radius:50%;background:#ff5c1a;z-index:0"></div>
       
-    <img src="uploads/Headshot BKG Removal-4716d9ed.png" alt="Evan Laux" style="position: relative; z-index: 2; display: block; height: 676px; width: 583px; margin: 0 auto; object-fit: contain; object-position: bottom center; -webkit-user-drag: none; transform: translate(0px, 165px)"></div>
+    <img class="hero-portrait" src="uploads/Headshot BKG Removal-4716d9ed.png" alt="Evan Laux" style="position: relative; z-index: 2; display: block; height: 676px; width: 583px; margin: 0 auto; object-fit: contain; object-position: bottom center; -webkit-user-drag: none; transform: translate(0px, 165px)"></div>
 
     
   </div>
@@ -72,7 +140,7 @@ input,textarea,button{font-family:inherit}
       <h2 style="margin:12px 0 0;font:700 56px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.02em">Selected frames</h2>
       <p style="margin:16px 0 0;max-width:460px;font:400 16px/1.6 'Space Grotesk',sans-serif;color:rgba(245,241,236,.6)">A cross-section of recent work — live events, weddings, and the places in between. Brand &amp; design case studies coming soon.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="cards-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
       <sc-for list="{{ featured }}" as="w" hint-placeholder-count="6">
         <div data-reveal="" style="display:flex;flex-direction:column;gap:14px">
           <image-slot id="{{ w.id }}" src="{{ w.src }}" shape="rounded" radius="14" placeholder="{{ w.tag }}" style="width:100%;height:340px;background:#1d1a17"></image-slot>
@@ -98,7 +166,7 @@ input,textarea,button{font-family:inherit}
     <div style="overflow-x:auto;padding:4px 56px 26px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch">
       <div style="display:flex;gap:24px;width:max-content">
         <sc-for list="{{ brands }}" as="b" hint-placeholder-count="6">
-          <div onClick="{{ b.onOpen }}" style="scroll-snap-align:start;flex:none;width:560px;cursor:pointer">
+          <div onClick="{{ b.onOpen }}" class="brand-card" style="scroll-snap-align:start;flex:none;width:560px;cursor:pointer">
             <div style="position:relative;overflow:hidden;border-radius:16px;background:#1d1a17;border:1px solid rgba(245,241,236,.08);aspect-ratio:16/9">
               <img src="{{ b.src }}" alt="{{ b.title }}" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)" style-hover="transform:scale(1.05)">
               <div style="position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(20,18,16,.66);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#f5f1ec;font-size:17px">⤢</div>
@@ -145,7 +213,7 @@ input,textarea,button{font-family:inherit}
         </sc-for>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;grid-auto-flow:dense">
+    <div class="cards-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;grid-auto-flow:dense">
       <sc-for list="{{ gallery }}" as="p" hint-placeholder-count="12">
         <image-slot id="{{ p.id }}" src="{{ p.src }}" shape="rounded" radius="12" placeholder="Photo" style="width:100%;height:300px;background:#1d1a17"></image-slot>
       </sc-for>
@@ -154,7 +222,7 @@ input,textarea,button{font-family:inherit}
 
   <div id="weddings" data-screen-label="Wedding Business" style="padding:90px 56px;border-top:1px solid rgba(245,241,236,.08);display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;position:relative;overflow:hidden">
     <div style="position:absolute;bottom:-200px;left:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.14),transparent 65%);pointer-events:none;z-index:0"></div>
-    <div data-reveal="" style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,190px);gap:14px">
+    <div data-reveal="" class="wed-grid" style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,190px);gap:14px">
       <image-slot id="wed-feature-1" src="uploads/IMG_9828.jpg" shape="rounded" radius="14" placeholder="Wedding photo" style="grid-row:span 2;width:100%;height:100%;background:#1d1a17"></image-slot>
       <image-slot id="wed-feature-2" src="uploads/IMG_0374.jpg" shape="rounded" radius="14" placeholder="Engagement photo" style="width:100%;height:100%;background:#1d1a17"></image-slot>
       <image-slot id="wed-feature-3" src="uploads/IMG_7362-2.jpg" shape="rounded" radius="14" placeholder="Wedding photo" style="width:100%;height:100%;background:#1d1a17"></image-slot>

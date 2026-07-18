@@ -4,6 +4,5 @@
 .github
 .DS_Store
 .thumbnail
-.image-slots.state.json
 wrangler.toml
 node_modules
