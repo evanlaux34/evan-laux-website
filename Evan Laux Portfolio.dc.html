@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#0d0c0b;font-family:'Space Grotesk',system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{color:#ff5c1a}
+input,textarea,button{font-family:inherit}
+@keyframes heroUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(255,255,255,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px 'Space Mono',monospace;padding:3px 7px;background:#fff;color:#0d0c0b;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 'Space Grotesk',sans-serif;color:#fff}
+.dv-opts{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px 'Space Mono',monospace;padding:3px 7px;background:rgba(255,255,255,.14);color:#fff;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px/1.3 'Space Grotesk',sans-serif;color:rgba(255,255,255,.6)}
+.dv-card{max-width:100%;border:1px solid rgba(255,255,255,.1);border-radius:10px;box-shadow:0 2px 18px rgba(0,0,0,.5);overflow:hidden}
+.dv-opt:target .dv-oid{background:#ff5c1a;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 'Space Grotesk',sans-serif;color:rgba(255,255,255,.5)}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Ember, four headline fonts (body/labels unchanged). <a class="dv-oid" href="#3a">3a</a> Space Grotesk (current). <a class="dv-oid" href="#3b">3b</a> Bricolage Grotesque. <a class="dv-oid" href="#3c">3c</a> Syne. <a class="dv-oid" href="#3d">3d</a> Instrument Serif.</span></div>
+<div class="dv-opts" style="flex-wrap:nowrap">
+
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>Space Grotesk — current</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" heading-font="'Space Grotesk', sans-serif" slot-prefix="f-grotesk" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>Bricolage Grotesque — warmer, more character</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" heading-font="'Bricolage Grotesque', sans-serif" slot-prefix="f-bricolage" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+<div class="dv-opt" id="3c">
+<div class="dv-olabel"><a class="dv-oid" href="#3c">3c</a>Syne — wide, design-forward display</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" heading-font="'Syne', sans-serif" slot-prefix="f-syne" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+<div class="dv-opt" id="3d">
+<div class="dv-olabel"><a class="dv-oid" href="#3d">3d</a>Instrument Serif — editorial contrast</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" heading-font="'Instrument Serif', serif" slot-prefix="f-instrument" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">1a in four colors. <a class="dv-oid" href="#2a">2a</a> Ember. <a class="dv-oid" href="#2b">2b</a> Verdant (green). <a class="dv-oid" href="#2c">2c</a> Azure (blue). <a class="dv-oid" href="#2d">2d</a> Solar (yellow).</span></div>
+<div class="dv-opts" style="flex-wrap:nowrap">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Ember — orange accent on charcoal</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" accent="#ff5c1a" accent-contrast="#141210" slot-prefix="v-ember" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Verdant — green accent on charcoal</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" accent="#33c46f" accent-contrast="#0b160f" slot-prefix="v-green" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Azure — blue accent on charcoal</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" accent="#3aa0ff" accent-contrast="#07131f" slot-prefix="v-blue" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+<div class="dv-opt" id="2d">
+<div class="dv-olabel"><a class="dv-oid" href="#2d">2d</a>Solar — yellow accent on charcoal</div>
+<div class="dv-card">
+<dc-import name="EmberVariant" accent="#ffd21e" accent-contrast="#161200" slot-prefix="v-yellow" hint-size="1440px,3300px"></dc-import>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">evanlaux.com — two dark directions. <a class="dv-oid" href="#1a">1a</a> Ember: warm orange, filterable mixed grid. <a class="dv-oid" href="#1b">1b</a> Crimson: red/black editorial, case-study rows. Drag your images onto any placeholder.</span></div>
+<div class="dv-opts">
+
+<!-- ============ OPTION 1A — EMBER ============ -->
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Ember — warm orange on charcoal · Space Grotesk · filterable work grid</div>
+<div class="dv-card" style="width:1440px;background:#141210;color:#f5f1ec">
+
+  <!-- nav -->
+  <header data-screen-label="1a Nav" style="display:flex;align-items:center;justify-content:space-between;padding:26px 56px;border-bottom:1px solid rgba(245,241,236,.08)">
+    <div style="font:700 17px 'Space Grotesk',sans-serif;letter-spacing:.02em">evanlaux<span style="color:#ff5c1a">.</span>com</div>
+    <nav style="display:flex;gap:34px;font:500 13px 'Space Grotesk',sans-serif;color:rgba(245,241,236,.65)">
+      <a href="#1a">Work</a><a href="#1a">Photography</a><a href="#1a">About</a><a href="#1a">Contact</a>
+    </nav>
+    <a href="#1a" style="display:inline-flex;align-items:center;gap:8px;background:#ff5c1a;color:#141210;font:600 13px 'Space Grotesk',sans-serif;padding:11px 20px;border-radius:100px">Get in touch <span style="font-size:15px">→</span></a>
+  </header>
+
+  <!-- hero -->
+  <div data-screen-label="1a Hero" style="padding:90px 56px 70px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-180px;right:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.22),transparent 65%);pointer-events:none"></div>
+    <div style="font:400 14px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase;animation:heroUp .7s .05s cubic-bezier(.2,.6,.2,1) both">Hey, I'm</div>
+    <h1 style="margin:14px 0 0;font:700 132px/0.98 'Space Grotesk',sans-serif;letter-spacing:-.03em">
+      <span style="display:block;animation:heroUp .8s .15s cubic-bezier(.2,.6,.2,1) both">Evan Laux</span>
+      <span style="display:block;color:transparent;-webkit-text-stroke:1.5px rgba(245,241,236,.55);animation:heroUp .8s .3s cubic-bezier(.2,.6,.2,1) both">Creative</span>
+      <span style="display:block;color:#ff5c1a;animation:heroUp .8s .45s cubic-bezier(.2,.6,.2,1) both">Strategist</span>
+    </h1>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:52px;animation:heroUp .8s .6s cubic-bezier(.2,.6,.2,1) both">
+      <div style="display:flex;gap:56px;font:400 12px 'Space Mono',monospace;color:rgba(245,241,236,.55)">
+        <div><span style="color:#ff5c1a">#01</span><br>Brand Identity</div>
+        <div><span style="color:#ff5c1a">#02</span><br>Design</div>
+        <div><span style="color:#ff5c1a">#03</span><br>Photography</div>
+      </div>
+      <p style="margin:0;max-width:360px;font:400 17px/1.55 'Space Grotesk',sans-serif;color:rgba(245,241,236,.72)">Creative strategist &amp; photographer. I build brands, design with intent, and shoot the world in between.</p>
+    </div>
+  </div>
+
+  <!-- marquee -->
+  <sc-if value="{{ showMarquee }}" hint-placeholder-val="{{ true }}">
+    <div style="border-top:1px solid rgba(245,241,236,.08);border-bottom:1px solid rgba(245,241,236,.08);overflow:hidden;padding:18px 0;background:#100f0e">
+      <div style="display:flex;gap:48px;width:max-content;animation:marquee 28s linear infinite;font:700 22px 'Space Grotesk',sans-serif;color:rgba(245,241,236,.4);white-space:nowrap">
+        <span>BRAND IDENTITY</span><span style="color:#ff5c1a">✳</span><span>ART DIRECTION</span><span style="color:#ff5c1a">✳</span><span>PHOTOGRAPHY</span><span style="color:#ff5c1a">✳</span><span>DESIGN</span><span style="color:#ff5c1a">✳</span>
+        <span>BRAND IDENTITY</span><span style="color:#ff5c1a">✳</span><span>ART DIRECTION</span><span style="color:#ff5c1a">✳</span><span>PHOTOGRAPHY</span><span style="color:#ff5c1a">✳</span><span>DESIGN</span><span style="color:#ff5c1a">✳</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- selected work -->
+  <div data-screen-label="1a Selected Work" style="padding:90px 56px">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px">
+      <div>
+        <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">Selected Work</div>
+        <h2 style="margin:12px 0 0;font:700 56px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.02em">Brands, designs<br>&amp; everything between</h2>
+      </div>
+      <div style="display:flex;gap:10px">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <sc-for list="{{ workItems }}" as="w" hint-placeholder-count="6">
+        <div data-reveal style="display:flex;flex-direction:column;gap:14px;cursor:pointer" style-hover="transform:translateY(-6px);transition:transform .35s">
+          <image-slot id="{{ w.slot }}" shape="rounded" radius="14" placeholder="{{ w.ph }}" style="width:100%;height:330px;background:#1d1a17"></image-slot>
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <div style="font:600 19px 'Space Grotesk',sans-serif">{{ w.title }}</div>
+            <div style="font:400 11px 'Space Mono',monospace;color:rgba(245,241,236,.5)">{{ w.year }}</div>
+          </div>
+          <div style="font:400 12px 'Space Mono',monospace;color:#ff5c1a;margin-top:-8px">{{ w.tag }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- photography -->
+  <div data-screen-label="1a Photography" style="padding:90px 56px;background:#100f0e;border-top:1px solid rgba(245,241,236,.08)">
+    <div data-reveal style="margin-bottom:40px">
+      <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">Photography</div>
+      <h2 style="margin:12px 0 0;font:700 56px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.02em">Shot &amp; edited by me</h2>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:20px">
+      <image-slot id="photo-a-1" shape="rounded" radius="14" placeholder="Photo — tall" style="grid-row:span 2;background:#1d1a17"></image-slot>
+      <image-slot id="photo-a-2" shape="rounded" radius="14" placeholder="Photo" style="background:#1d1a17"></image-slot>
+      <image-slot id="photo-a-3" shape="rounded" radius="14" placeholder="Photo — wide" style="grid-column:span 2;background:#1d1a17"></image-slot>
+      <image-slot id="photo-a-4" shape="rounded" radius="14" placeholder="Photo — wide" style="grid-column:span 2;background:#1d1a17"></image-slot>
+      <image-slot id="photo-a-5" shape="rounded" radius="14" placeholder="Photo" style="background:#1d1a17"></image-slot>
+      <image-slot id="photo-a-6" shape="rounded" radius="14" placeholder="Photo — wide" style="grid-column:span 3;background:#1d1a17"></image-slot>
+      <image-slot id="photo-a-7" shape="rounded" radius="14" placeholder="Photo" style="background:#1d1a17"></image-slot>
+    </div>
+  </div>
+
+  <!-- about -->
+  <div data-screen-label="1a About" style="padding:90px 56px;display:grid;grid-template-columns:380px 1fr;gap:64px;border-top:1px solid rgba(245,241,236,.08)">
+    <div data-reveal>
+      <image-slot id="about-a" shape="rounded" radius="16" placeholder="Portrait of Evan" style="width:100%;height:460px;background:#1d1a17"></image-slot>
+    </div>
+    <div data-reveal>
+      <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">About</div>
+      <h2 style="margin:12px 0 24px;font:700 48px/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em">Strategy first,<br>craft always</h2>
+      <p style="margin:0 0 18px;font:400 17px/1.65 'Space Grotesk',sans-serif;color:rgba(245,241,236,.72);max-width:560px">I'm Evan — a creative strategist and photographer. I help brands figure out what they stand for, then make it visible: identities, design systems, and photography that carries the story.</p>
+      <p style="margin:0;font:400 17px/1.65 'Space Grotesk',sans-serif;color:rgba(245,241,236,.72);max-width:560px">Whether you're launching something new or refining what exists, I bring strategy and craft to every step.</p>
+      <div style="display:flex;gap:40px;margin-top:36px;font:400 12px 'Space Mono',monospace;color:rgba(245,241,236,.55)">
+        <div><span style="font:700 32px 'Space Grotesk',sans-serif;color:#f5f1ec">∞</span><br>ideas per brief</div>
+        <div><span style="font:700 32px 'Space Grotesk',sans-serif;color:#f5f1ec">1</span><br>obsessive standard</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- contact -->
+  <div data-screen-label="1a Contact" style="padding:90px 56px 70px;background:#ff5c1a;color:#141210">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px">
+      <div data-reveal>
+        <h2 style="margin:0;font:700 72px/1 'Space Grotesk',sans-serif;letter-spacing:-.03em">Let's make<br>something.</h2>
+        <p style="margin:24px 0 0;font:400 17px/1.6 'Space Grotesk',sans-serif;max-width:400px;color:rgba(20,18,16,.8)">Have a project in mind? Tell me about it, or grab time on my calendar.</p>
+        <a href="{{ calendlyUrl }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:32px;background:#141210;color:#f5f1ec;font:600 14px 'Space Grotesk',sans-serif;padding:15px 26px;border-radius:100px" style-hover="transform:scale(1.04);transition:transform .25s">Book a call <span>↗</span></a>
+        <div style="margin-top:22px;font:400 13px 'Space Mono',monospace"><a href="{{ mailto }}" style="color:#141210;text-decoration:underline">{{ contactEmail }}</a></div>
+      </div>
+      <form data-reveal style="display:flex;flex-direction:column;gap:14px" onSubmit="{{ onSubmit }}">
+        <input placeholder="Your name" style="background:rgba(20,18,16,.1);border:1px solid rgba(20,18,16,.3);border-radius:10px;padding:15px 18px;font-size:15px;color:#141210;outline:none">
+        <input placeholder="Email" style="background:rgba(20,18,16,.1);border:1px solid rgba(20,18,16,.3);border-radius:10px;padding:15px 18px;font-size:15px;color:#141210;outline:none">
+        <textarea placeholder="Tell me about your project…" rows="5" style="background:rgba(20,18,16,.1);border:1px solid rgba(20,18,16,.3);border-radius:10px;padding:15px 18px;font-size:15px;color:#141210;outline:none;resize:vertical"></textarea>
+        <button type="submit" style="background:#141210;color:#f5f1ec;border:none;border-radius:10px;padding:16px;font:600 15px 'Space Grotesk',sans-serif;cursor:pointer" style-hover="opacity:.85">{{ sendLabelA }}</button>
+      </form>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:80px;padding-top:24px;border-top:1px solid rgba(20,18,16,.25);font:400 12px 'Space Mono',monospace;color:rgba(20,18,16,.7)">
+      <span>© 2026 Evan Laux</span><span>www.evanlaux.com</span><span>Instagram ↗</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ OPTION 1B — CRIMSON ============ -->
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Crimson — red/black editorial · Archivo Black · big case-study rows</div>
+<div class="dv-card" style="width:1440px;background:#101013;color:#f2ede4;font-family:'Archivo',sans-serif">
+
+  <!-- nav -->
+  <header data-screen-label="1b Nav" style="display:flex;align-items:center;justify-content:space-between;padding:22px 48px;border-bottom:2px solid #f2ede4">
+    <div style="font:400 20px 'Archivo Black',sans-serif;letter-spacing:-.01em">EVAN LAUX</div>
+    <nav style="display:flex;gap:30px;font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.7)">
+      <a href="#1b">Work</a><a href="#1b">Photos</a><a href="#1b">About</a><a href="#1b">Contact</a>
+    </nav>
+    <a href="#1b" style="background:#e8321f;color:#f2ede4;font:700 12px 'Archivo',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px">Hire me →</a>
+  </header>
+
+  <!-- hero -->
+  <div data-screen-label="1b Hero" style="display:grid;grid-template-columns:1.15fr 1fr;min-height:640px">
+    <div style="background:#e8321f;color:#f2ede4;padding:64px 48px;display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <h1 style="margin:0;font:400 118px/0.95 'Archivo Black',sans-serif;letter-spacing:-.02em;text-transform:uppercase">
+          <span style="display:block;animation:heroUp .8s .1s cubic-bezier(.2,.6,.2,1) both">Evan</span>
+          <span style="display:block;color:#101013;animation:heroUp .8s .28s cubic-bezier(.2,.6,.2,1) both">Laux</span>
+        </h1>
+        <div style="margin-top:32px;font:700 15px 'Archivo',sans-serif;letter-spacing:.18em;text-transform:uppercase;animation:heroUp .8s .46s cubic-bezier(.2,.6,.2,1) both">Creative Strategist<br>&amp; Photographer</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font:600 13px 'Archivo',sans-serif;letter-spacing:.06em;animation:heroUp .8s .6s cubic-bezier(.2,.6,.2,1) both">
+        <span>PORTFOLIO — 2026</span><a href="{{ mailto }}" style="text-decoration:underline">{{ contactEmail }}</a>
+      </div>
+    </div>
+    <image-slot id="hero-b" shape="rect" placeholder="B/W portrait of Evan" style="width:100%;height:100%;min-height:640px;background:#1a1a1f"></image-slot>
+  </div>
+
+  <!-- index strip -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid #f2ede4">
+    <div style="padding:22px 48px;border-right:1px solid rgba(242,237,228,.2);font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55)"><span style="color:#e8321f">01</span> — Selected Work</div>
+    <div style="padding:22px 48px;border-right:1px solid rgba(242,237,228,.2);font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55)"><span style="color:#e8321f">02</span> — Photography</div>
+    <div style="padding:22px 48px;border-right:1px solid rgba(242,237,228,.2);font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55)"><span style="color:#e8321f">03</span> — About</div>
+    <div style="padding:22px 48px;font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55)"><span style="color:#e8321f">04</span> — Contact</div>
+  </div>
+
+  <!-- case-study rows -->
+  <div data-screen-label="1b Selected Work" style="padding:80px 48px">
+    <h2 data-reveal style="margin:0 0 56px;font:400 84px/0.95 'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.02em">Selected<br><span style="color:#e8321f">Work.</span></h2>
+
+    <div data-reveal style="display:grid;grid-template-columns:90px 1fr 1.4fr;gap:36px;padding:42px 0;border-top:2px solid #f2ede4;align-items:center">
+      <div style="font:400 30px 'Archivo Black',sans-serif;color:#e8321f">01</div>
+      <div>
+        <div style="font:400 34px 'Archivo Black',sans-serif;text-transform:uppercase;line-height:1.05">Project One</div>
+        <div style="margin-top:12px;font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55)">Brand Identity — 2025</div>
+        <p style="margin:16px 0 0;font:400 15px/1.6 'Archivo',sans-serif;color:rgba(242,237,228,.7);max-width:340px">A short line on what this brand needed and what you delivered.</p>
+      </div>
+      <image-slot id="case-b-1" shape="rect" placeholder="Project One — hero image" style="width:100%;height:340px;background:#1a1a1f"></image-slot>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:90px 1fr 1.4fr;gap:36px;padding:42px 0;border-top:2px solid #f2ede4;align-items:center">
+      <div style="font:400 30px 'Archivo Black',sans-serif;color:#e8321f">02</div>
+      <div>
+        <div style="font:400 34px 'Archivo Black',sans-serif;text-transform:uppercase;line-height:1.05">Project Two</div>
+        <div style="margin-top:12px;font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55)">Design — 2025</div>
+        <p style="margin:16px 0 0;font:400 15px/1.6 'Archivo',sans-serif;color:rgba(242,237,228,.7);max-width:340px">A short line on what this brand needed and what you delivered.</p>
+      </div>
+      <image-slot id="case-b-2" shape="rect" placeholder="Project Two — hero image" style="width:100%;height:340px;background:#1a1a1f"></image-slot>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:90px 1fr 1.4fr;gap:36px;padding:42px 0;border-top:2px solid #f2ede4;border-bottom:2px solid #f2ede4;align-items:center">
+      <div style="font:400 30px 'Archivo Black',sans-serif;color:#e8321f">03</div>
+      <div>
+        <div style="font:400 34px 'Archivo Black',sans-serif;text-transform:uppercase;line-height:1.05">Project Three</div>
+        <div style="margin-top:12px;font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55)">Brand + Photo — 2024</div>
+        <p style="margin:16px 0 0;font:400 15px/1.6 'Archivo',sans-serif;color:rgba(242,237,228,.7);max-width:340px">A short line on what this brand needed and what you delivered.</p>
+      </div>
+      <image-slot id="case-b-3" shape="rect" placeholder="Project Three — hero image" style="width:100%;height:340px;background:#1a1a1f"></image-slot>
+    </div>
+  </div>
+
+  <!-- photography filmstrip -->
+  <div data-screen-label="1b Photography" style="background:#e8321f;color:#101013;padding:70px 0">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:baseline;padding:0 48px;margin-bottom:40px">
+      <h2 style="margin:0;font:400 84px/0.95 'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.02em">Photo<br>graphy.</h2>
+      <div style="font:700 13px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase">Shot &amp; edited by Evan — scroll →</div>
+    </div>
+    <div data-reveal style="display:flex;gap:20px;overflow-x:auto;padding:0 48px 12px">
+      <image-slot id="photo-b-1" shape="rect" placeholder="Photo 01" style="flex:none;width:340px;height:440px;background:#c4281a"></image-slot>
+      <image-slot id="photo-b-2" shape="rect" placeholder="Photo 02" style="flex:none;width:520px;height:440px;background:#c4281a"></image-slot>
+      <image-slot id="photo-b-3" shape="rect" placeholder="Photo 03" style="flex:none;width:340px;height:440px;background:#c4281a"></image-slot>
+      <image-slot id="photo-b-4" shape="rect" placeholder="Photo 04" style="flex:none;width:520px;height:440px;background:#c4281a"></image-slot>
+      <image-slot id="photo-b-5" shape="rect" placeholder="Photo 05" style="flex:none;width:340px;height:440px;background:#c4281a"></image-slot>
+    </div>
+  </div>
+
+  <!-- about -->
+  <div data-screen-label="1b About" style="display:grid;grid-template-columns:1fr 1.3fr;border-bottom:2px solid #f2ede4">
+    <div data-reveal style="padding:70px 48px;border-right:2px solid #f2ede4">
+      <h2 style="margin:0;font:400 64px/0.98 'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.02em">Who is<br><span style="color:#e8321f">Evan?</span></h2>
+      <image-slot id="about-b" shape="rect" placeholder="Candid portrait" style="width:100%;height:300px;margin-top:36px;background:#1a1a1f"></image-slot>
+    </div>
+    <div data-reveal style="padding:70px 48px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+      <p style="margin:0;font:400 22px/1.55 'Archivo',sans-serif;color:rgba(242,237,228,.85);max-width:560px">Creative strategist and photographer. I help brands figure out what they stand for — then make it impossible to ignore.</p>
+      <p style="margin:0;font:400 16px/1.65 'Archivo',sans-serif;color:rgba(242,237,228,.6);max-width:560px">Brand identities, design systems, and photography shot and edited by hand. Strategy first, craft always, no templates.</p>
+      <div style="display:flex;gap:16px;margin-top:12px">
+        <span style="border:1px solid rgba(242,237,228,.4);padding:8px 16px;font:700 11px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase">Brand Strategy</span>
+        <span style="border:1px solid rgba(242,237,228,.4);padding:8px 16px;font:700 11px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase">Design</span>
+        <span style="border:1px solid rgba(242,237,228,.4);padding:8px 16px;font:700 11px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase">Photography</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- contact -->
+  <div data-screen-label="1b Contact" style="padding:80px 48px 60px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px">
+      <div data-reveal>
+        <h2 style="margin:0;font:400 96px/0.92 'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.02em">Let's<br><span style="color:#e8321f">Work.</span></h2>
+        <a href="{{ calendlyUrl }}" style="display:inline-block;margin-top:40px;background:#e8321f;color:#f2ede4;font:700 13px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:18px 32px" style-hover="background:#f2ede4;color:#101013">Book a call ↗</a>
+        <div style="margin-top:24px;font:600 14px 'Archivo',sans-serif"><a href="{{ mailto }}" style="text-decoration:underline">{{ contactEmail }}</a></div>
+      </div>
+      <form data-reveal style="display:flex;flex-direction:column;gap:0;border:2px solid #f2ede4" onSubmit="{{ onSubmit }}">
+        <input placeholder="NAME" style="background:transparent;border:none;border-bottom:2px solid #f2ede4;padding:18px 20px;font:700 13px 'Archivo',sans-serif;letter-spacing:.1em;color:#f2ede4;outline:none">
+        <input placeholder="EMAIL" style="background:transparent;border:none;border-bottom:2px solid #f2ede4;padding:18px 20px;font:700 13px 'Archivo',sans-serif;letter-spacing:.1em;color:#f2ede4;outline:none">
+        <textarea placeholder="PROJECT DETAILS" rows="5" style="background:transparent;border:none;padding:18px 20px;font:700 13px 'Archivo',sans-serif;letter-spacing:.1em;color:#f2ede4;outline:none;resize:vertical"></textarea>
+        <button type="submit" style="background:#f2ede4;color:#101013;border:none;padding:20px;font:400 16px 'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:.06em;cursor:pointer" style-hover="background:#e8321f;color:#f2ede4">{{ sendLabelB }}</button>
+      </form>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:70px;padding-top:20px;border-top:2px solid #f2ede4;font:700 11px 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.6)">
+      <span>© 2026 Evan Laux</span><span>www.evanlaux.com</span><span>Instagram ↗</span>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "go with <a class="dv-oid" href="#1a">1a</a> but with the red from <a class="dv-oid" href="#1b">1b</a>" · "make <a class="dv-oid" href="#1b">1b</a>'s hero type bigger" · "show me a third direction"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;contactEmail&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;hello@evanlaux.com&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; },
+  &quot;calendlyUrl&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;#&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; },
+  &quot;showMarquee&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;1a Ember&quot; }
+}">
+class Component extends DCLogic {
+  state = { filterA: 'all', sentA: false, sentB: false };
+
+  componentDidMount() {
+    const els = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+    els.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity .85s cubic-bezier(.2,.6,.2,1), transform .85s cubic-bezier(.2,.6,.2,1)';
+      io.observe(el);
+    });
+    this._io = io;
+    // Safety: reveal anything still hidden after 8s (e.g. if observer never fires in canvas mode)
+    this._safety = setTimeout(() => {
+      els.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    }, 8000);
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    clearTimeout(this._safety);
+  }
+
+  renderVals() {
+    const work = [
+      { title: 'Placeholder Brand', cat: 'brand', year: '2025', tag: 'Brand Identity', slot: 'work-a-1', ph: 'Drop a brand project' },
+      { title: 'Placeholder Design', cat: 'design', year: '2025', tag: 'Design', slot: 'work-a-2', ph: 'Drop a design project' },
+      { title: 'Placeholder Photo Set', cat: 'photo', year: '2025', tag: 'Photography', slot: 'work-a-3', ph: 'Drop a photo' },
+      { title: 'Placeholder Brand II', cat: 'brand', year: '2024', tag: 'Brand Identity', slot: 'work-a-4', ph: 'Drop a brand project' },
+      { title: 'Placeholder Design II', cat: 'design', year: '2024', tag: 'Design', slot: 'work-a-5', ph: 'Drop a design project' },
+      { title: 'Placeholder Photo Set II', cat: 'photo', year: '2024', tag: 'Photography', slot: 'work-a-6', ph: 'Drop a photo' },
+    ];
+    const cats = [
+      { id: 'all', label: 'All' },
+      { id: 'brand', label: 'Brands' },
+      { id: 'design', label: 'Design' },
+      { id: 'photo', label: 'Photo' },
+    ];
+    const active = this.state.filterA;
+    const filters = cats.map((c) => ({
+      label: c.label,
+      onClick: () => this.setState({ filterA: c.id }),
+      style: {
+        font: "500 13px 'Space Grotesk', sans-serif",
+        padding: '9px 18px',
+        borderRadius: '100px',
+        cursor: 'pointer',
+        border: '1px solid ' + (c.id === active ? '#ff5c1a' : 'rgba(245,241,236,.25)'),
+        background: c.id === active ? '#ff5c1a' : 'transparent',
+        color: c.id === active ? '#141210' : 'rgba(245,241,236,.7)',
+        transition: 'all .25s',
+      },
+    }));
+    const workItems = work.filter((w) => active === 'all' || w.cat === active);
+
+    const contactEmail = this.props.contactEmail ?? 'hello@evanlaux.com';
+    return {
+      filters,
+      workItems,
+      showMarquee: this.props.showMarquee ?? true,
+      contactEmail,
+      mailto: 'mailto:' + contactEmail,
+      calendlyUrl: this.props.calendlyUrl ?? '#',
+      sendLabelA: this.state.sentA ? 'Sent — talk soon ✓' : 'Send message',
+      sendLabelB: this.state.sentB ? 'Sent — Talk Soon' : 'Send It',
+      onSubmit: (e) => {
+        e.preventDefault();
+        const inRed = e.currentTarget.closest('[id="1b"]');
+        this.setState(inRed ? { sentB: true } : { sentA: true });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

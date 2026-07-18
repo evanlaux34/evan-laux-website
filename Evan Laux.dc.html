@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#141210;font-family:'Space Grotesk',system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{color:#ff5c1a}
+input,textarea,button{font-family:inherit}
+@keyframes heroUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroPortrait{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes badgeSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="width:1440px;background:#141210;color:#f5f1ec">
+
+  <header data-screen-label="Nav" style="display:flex;align-items:center;justify-content:space-between;padding:26px 56px;border-bottom:1px solid rgba(245,241,236,.08);position:sticky;top:0;z-index:20;background:rgba(20,18,16,.82);backdrop-filter:blur(10px)">
+    <div style="font:700 17px 'Space Grotesk',sans-serif;letter-spacing:.02em">evanlaux<span style="color:#ff5c1a">.</span>com</div>
+    <nav style="display:flex;gap:34px;font:500 13px 'Space Grotesk',sans-serif;color:rgba(245,241,236,.65)">
+      <a href="#work">Work</a><a href="#photography">Photography</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:#ff5c1a;color:#141210;font:600 13px 'Space Grotesk',sans-serif;padding:11px 20px;border-radius:100px">Get in touch <span style="font-size:15px">→</span></a>
+  </header>
+
+  <div data-screen-label="Hero" style="position:relative;overflow:hidden;padding:80px 56px 64px;min-height:640px;display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center">
+    <div style="position: absolute; top: -180px; right: 120px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle,rgba(255,92,26,.22),transparent 65%); pointer-events: none; z-index: 0; transform: translate(-243px, 0px)"></div>
+
+    <div style="position:relative;z-index:2">
+      <div style="font:400 14px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase;animation:heroUp .7s .05s cubic-bezier(.2,.6,.2,1) both">Hey, I'm</div>
+      <h1 style="margin:14px 0 0;font:700 132px/0.98 'Space Grotesk',sans-serif;letter-spacing:-.03em">
+        <span style="display:block;animation:heroUp .8s .15s cubic-bezier(.2,.6,.2,1) both">Evan Laux</span>
+        <span style="display:block;color:transparent;-webkit-text-stroke:1.5px rgba(245,241,236,.55);animation:heroUp .8s .3s cubic-bezier(.2,.6,.2,1) both">Creative</span>
+        <span style="display:block;color:#ff5c1a;animation:heroUp .8s .45s cubic-bezier(.2,.6,.2,1) both">Strategist</span>
+      </h1>
+      <div style="display:flex;gap:48px;margin-top:44px;animation:heroUp .8s .6s cubic-bezier(.2,.6,.2,1) both">
+        <div style="display:flex;gap:40px;font:400 12px 'Space Mono',monospace;color:rgba(245,241,236,.55)">
+          <div><span style="color:#ff5c1a">#01</span><br>Brand Identity</div>
+          <div><span style="color:#ff5c1a">#02</span><br>Design</div>
+          <div><span style="color:#ff5c1a">#03</span><br>Photography</div>
+        </div>
+      </div>
+      <p style="margin:28px 0 0;max-width:400px;font:400 17px/1.55 'Space Grotesk',sans-serif;color:rgba(245,241,236,.72);animation:heroUp .8s .7s cubic-bezier(.2,.6,.2,1) both">Creative strategist &amp; photographer. I build brands, design with intent, and capture the world in between.</p>
+    </div>
+
+    <div style="position:relative;z-index:1;height:560px;display:flex;align-items:center;justify-content:center;animation:heroPortrait 1s .35s cubic-bezier(.2,.6,.2,1) both">
+      <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:390px;height:390px;border-radius:50%;background:#ff5c1a;z-index:0"></div>
+      <img src="uploads/Headshot BKG Removal-4716d9ed.png" alt="Evan Laux" style="position: relative; z-index: 2; display: block; height: 560px; width: auto; margin: 0 auto; object-fit: contain; object-position: bottom center; -webkit-user-drag: none; transform: translate(0px, 116px)">
+      <div style="position:absolute;z-index:3;top:8px;right:6px;width:118px;height:118px;animation:badgeSpin 22s linear infinite">
+        <svg viewBox="0 0 120 120" style="width:100%;height:100%">
+          <defs><path id="hp-circle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"></path></defs>
+          <text style="font:600 11.6px 'Space Mono',monospace;letter-spacing:2.6px;fill:#141210;text-transform:uppercase"><textPath href="#hp-circle" startOffset="0">Available worldwide · Open for projects · </textPath></text>
+        </svg>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#141210;display:flex;align-items:center;justify-content:center;color:#ff5c1a;font-size:20px">◎</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(245,241,236,.08);border-bottom:1px solid rgba(245,241,236,.08);overflow:hidden;padding:18px 0;background:#100f0e">
+    <div style="display:flex;gap:48px;width:max-content;animation:marquee 28s linear infinite;font:700 22px 'Space Grotesk',sans-serif;color:rgba(245,241,236,.4);white-space:nowrap">
+      <span>EVENT PHOTOGRAPHY</span><span style="color:#ff5c1a">✳</span><span>WEDDINGS</span><span style="color:#ff5c1a">✳</span><span>BRAND IDENTITY</span><span style="color:#ff5c1a">✳</span><span>TRAVEL &amp; STREET</span><span style="color:#ff5c1a">✳</span>
+      <span>EVENT PHOTOGRAPHY</span><span style="color:#ff5c1a">✳</span><span>WEDDINGS</span><span style="color:#ff5c1a">✳</span><span>BRAND IDENTITY</span><span style="color:#ff5c1a">✳</span><span>TRAVEL &amp; STREET</span><span style="color:#ff5c1a">✳</span>
+    </div>
+  </div>
+
+  <div id="work" data-screen-label="Featured Work" style="padding:90px 56px 70px">
+    <div data-reveal="" style="margin-bottom:40px">
+      <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">Featured Work</div>
+      <h2 style="margin:12px 0 0;font:700 56px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.02em">Selected frames</h2>
+      <p style="margin:16px 0 0;max-width:460px;font:400 16px/1.6 'Space Grotesk',sans-serif;color:rgba(245,241,236,.6)">A cross-section of recent work — live events, weddings, and the places in between. Brand &amp; design case studies coming soon.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <sc-for list="{{ featured }}" as="w" hint-placeholder-count="6">
+        <div data-reveal="" style="display:flex;flex-direction:column;gap:14px">
+          <image-slot id="{{ w.id }}" src="{{ w.src }}" shape="rounded" radius="14" placeholder="{{ w.tag }}" style="width:100%;height:340px;background:#1d1a17"></image-slot>
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <div style="font:600 19px 'Space Grotesk',sans-serif">{{ w.title }}</div>
+            <div style="font:400 11px 'Space Mono',monospace;color:rgba(245,241,236,.5)">{{ w.year }}</div>
+          </div>
+          <div style="font:400 12px 'Space Mono',monospace;color:#ff5c1a;margin-top:-8px">{{ w.tag }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="photography" data-screen-label="Photography" style="padding:90px 56px;background:#100f0e;border-top:1px solid rgba(245,241,236,.08)">
+    <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:24px">
+      <div>
+        <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">Photography</div>
+        <h2 style="margin:12px 0 0;font:700 56px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.02em">Shot &amp; edited by me</h2>
+      </div>
+      <div style="display:flex;gap:10px">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;grid-auto-flow:dense">
+      <sc-for list="{{ gallery }}" as="p" hint-placeholder-count="12">
+        <image-slot id="{{ p.id }}" src="{{ p.src }}" shape="rounded" radius="12" placeholder="Photo" style="width:100%;height:300px;background:#1d1a17"></image-slot>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="about" data-screen-label="About" style="padding:90px 56px;display:grid;grid-template-columns:380px 1fr;gap:64px;border-top:1px solid rgba(245,241,236,.08)">
+    <div data-reveal="">
+      <image-slot id="about-portrait" src="uploads/Headshot.jpg" fit="cover" shape="rounded" radius="16" placeholder="Portrait of Evan" style="width:100%;height:460px;background:#1d1a17"></image-slot>
+    </div>
+    <div data-reveal="">
+      <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">About</div>
+      <h2 style="margin:12px 0 24px;font:700 48px/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em">Strategy first,<br>craft always</h2>
+      <p style="margin:0 0 18px;font:400 17px/1.65 'Space Grotesk',sans-serif;color:rgba(245,241,236,.72);max-width:560px">I'm Evan — a creative strategist and photographer. I help brands figure out what they stand for, then make it visible: identities, design systems, and photography that carries the story.</p>
+      <p style="margin:0;font:400 17px/1.65 'Space Grotesk',sans-serif;color:rgba(245,241,236,.72);max-width:560px">From conference stages to wedding days to city streets, I shoot and edit everything myself. Whether you're launching something new or refining what exists, I bring strategy and craft to every step.</p>
+      <div style="display:flex;gap:40px;margin-top:36px;font:400 12px 'Space Mono',monospace;color:rgba(245,241,236,.55)">
+        <div><span style="font:700 32px 'Space Grotesk',sans-serif;color:#f5f1ec">∞</span><br>ideas per brief</div>
+        <div><span style="font:700 32px 'Space Grotesk',sans-serif;color:#f5f1ec">1</span><br>obsessive standard</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" data-screen-label="Contact" style="padding:90px 56px 70px;background:#ff5c1a;color:#141210">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px">
+      <div data-reveal="">
+        <h2 style="margin:0;font:700 72px/1 'Space Grotesk',sans-serif;letter-spacing:-.03em">Let's make<br>something.</h2>
+        <p style="margin:24px 0 0;font:400 17px/1.6 'Space Grotesk',sans-serif;max-width:400px;color:rgba(20,18,16,.8)">Have a project in mind? Tell me about it, or grab time on my calendar.</p>
+        <a href="{{ calendlyUrl }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:32px;background:#141210;color:#f5f1ec;font:600 14px 'Space Grotesk',sans-serif;padding:15px 26px;border-radius:100px" style-hover="transform:scale(1.04);transition:transform .25s">Book a call <span>↗</span></a>
+        <div style="margin-top:22px;font:400 13px 'Space Mono',monospace"><a href="{{ mailto }}" style="color:#141210;text-decoration:underline">{{ contactEmail }}</a></div>
+      </div>
+      <form data-reveal="" style="display:flex;flex-direction:column;gap:14px" onSubmit="{{ onSubmit }}">
+        <input placeholder="Your name" style="background:#141210;border:1px solid rgba(0,0,0,.35);border-radius:10px;padding:15px 18px;font-size:15px;color:#f5f1ec;outline:none">
+        <input placeholder="Email" style="background:#141210;border:1px solid rgba(0,0,0,.35);border-radius:10px;padding:15px 18px;font-size:15px;color:#f5f1ec;outline:none">
+        <textarea placeholder="Tell me about your project…" rows="5" style="background:#141210;border:1px solid rgba(0,0,0,.35);border-radius:10px;padding:15px 18px;font-size:15px;color:#f5f1ec;outline:none;resize:vertical"></textarea>
+        <button type="submit" style="background:#141210;color:#f5f1ec;border:none;border-radius:10px;padding:16px;font:600 15px 'Space Grotesk',sans-serif;cursor:pointer" style-hover="opacity:.85">{{ sendLabel }}</button>
+      </form>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:80px;padding-top:24px;border-top:1px solid rgba(20,18,16,.25);font:400 12px 'Space Mono',monospace;color:rgba(20,18,16,.7)">
+      <span>© 2026 Evan Laux</span><span>www.evanlaux.com</span><a href="{{ instagramUrl }}">Instagram ↗</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;contactEmail&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;evan@lauxcreatives.com&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; },
+  &quot;calendlyUrl&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;#&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; },
+  &quot;instagramUrl&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;#&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; }
+}">
+class Component extends DCLogic {
+  state = { filter: 'all', sent: false };
+  rootRef = React.createRef();
+
+  componentDidMount() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+    root.querySelectorAll('[data-reveal]').forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity .85s cubic-bezier(.2,.6,.2,1), transform .85s cubic-bezier(.2,.6,.2,1)';
+      io.observe(el);
+    });
+    this._io = io;
+    this._safety = setTimeout(() => {
+      root.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    }, 8000);
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    clearTimeout(this._safety);
+  }
+
+  u(name) { return 'uploads/' + encodeURIComponent(name); }
+
+  renderVals() {
+    const featured = [
+      { id: 'feat-1', src: this.u('IMG_5922.jpg'), title: 'On Stage', tag: 'Event Photography', year: '2025' },
+      { id: 'feat-2', src: this.u('IMG_9828.jpg'), title: 'The Send-Off', tag: 'Wedding', year: '2025' },
+      { id: 'feat-3', src: this.u('DSCF1297.jpg'), title: 'Where the West Lives', tag: 'Travel', year: '2024' },
+      { id: 'feat-4', src: this.u('IMG_5708-Enhanced-NR.jpg'), title: 'Worship Night', tag: 'Event Photography', year: '2025' },
+      { id: 'feat-5', src: this.u('IMG_0374.jpg'), title: 'Golden Hour', tag: 'Engagement', year: '2025' },
+      { id: 'feat-6', src: this.u('DSCF5661.jpg'), title: 'Rush Hour', tag: 'Street', year: '2024' },
+    ];
+
+    const photos = [
+      // Events / conference
+      { f: 'IMG_5271.jpg', g: 'event' }, { f: 'IMG_5546.jpg', g: 'event' },
+      { f: 'IMG_5589.jpg', g: 'event' }, { f: 'IMG_5809-Enhanced-NR.jpg', g: 'event' },
+      { f: 'IMG_5819.jpg', g: 'event' }, { f: 'IMG_5835.jpg', g: 'event' },
+      { f: 'IMG_7699.jpg', g: 'event' },
+      // Weddings & engagements
+      { f: 'IMG_0269.jpg', g: 'wedding' }, { f: 'IMG_0793.jpg', g: 'wedding' },
+      { f: 'IMG_0861.jpg', g: 'wedding' }, { f: 'IMG_2221.jpg', g: 'wedding' },
+      { f: 'IMG_2858-2.jpg', g: 'wedding' }, { f: 'IMG_3051-2.jpg', g: 'wedding' },
+      { f: 'IMG_6684 2.jpg', g: 'wedding' }, { f: 'IMG_6926-3.jpg', g: 'wedding' },
+      { f: 'IMG_7362-2.jpg', g: 'wedding' }, { f: 'IMG_7770.jpg', g: 'wedding' },
+      { f: 'IMG_9649-2.jpg', g: 'wedding' }, { f: 'IMG_9670.jpg', g: 'wedding' },
+      // Travel & street
+      { f: 'DSCF1269-3.jpg', g: 'travel' }, { f: 'DSCF1279-2.jpg', g: 'travel' },
+      { f: 'DSCF1528-2.jpg', g: 'travel' }, { f: 'DSCF5453.jpg', g: 'travel' },
+      { f: 'DSCF5565.jpg', g: 'travel' }, { f: 'DSCF5646.jpg', g: 'travel' },
+      { f: 'IMG_3962.JPG', g: 'travel' }, { f: 'IMG_4434.JPG', g: 'travel' },
+    ].map((p, i) => ({ id: 'g-' + i, src: this.u(p.f), g: p.g }));
+
+    const cats = [
+      { id: 'all', label: 'All' },
+      { id: 'event', label: 'Events' },
+      { id: 'wedding', label: 'Weddings' },
+      { id: 'travel', label: 'Travel' },
+    ];
+    const active = this.state.filter;
+    const filters = cats.map((c) => ({
+      label: c.label,
+      onClick: () => this.setState({ filter: c.id }),
+      style: {
+        font: "500 13px 'Space Grotesk', sans-serif",
+        padding: '9px 18px', borderRadius: '100px', cursor: 'pointer',
+        border: '1px solid ' + (c.id === active ? '#ff5c1a' : 'rgba(245,241,236,.25)'),
+        background: c.id === active ? '#ff5c1a' : 'transparent',
+        color: c.id === active ? '#141210' : 'rgba(245,241,236,.7)',
+        transition: 'all .25s',
+      },
+    }));
+    const gallery = photos.filter((p) => active === 'all' || p.g === active);
+
+    const contactEmail = this.props.contactEmail ?? 'evan@lauxcreatives.com';
+    return {
+      rootRef: this.rootRef,
+      featured, filters, gallery,
+      contactEmail,
+      mailto: 'mailto:' + contactEmail,
+      calendlyUrl: this.props.calendlyUrl ?? '#',
+      instagramUrl: this.props.instagramUrl ?? '#',
+      sendLabel: this.state.sent ? 'Sent — talk soon ✓' : 'Send message',
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

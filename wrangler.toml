@@ -1,0 +1,12 @@
+name = "evan-laux-website"
+compatibility_date = "2026-07-18"
+
+# This is a no-build static site: all HTML/CSS/JS live at the repo root.
+# Deploy it as a Workers Static Assets project (matches `wrangler deploy`,
+# the command the deploy runs). No Worker script is required —
+# a Worker with only an [assets] directory serves the files directly.
+[assets]
+directory = "."
+# Serve clean, no-trailing-slash URLs (/portfolio, not /portfolio/) to match the
+# canonical tags and sitemap; the trailing-slash form 301s to the clean one.
+html_handling = "drop-trailing-slash"

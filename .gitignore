@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+.thumbnail
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Wrangler / Cloudflare
+.wrangler/
+
+# Local Claude Code / preview config (not part of the deployed site)
+.claude/
