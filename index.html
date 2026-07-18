@@ -43,6 +43,17 @@ img{max-width:100%}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ============ Responsive ============ */
+/* Full-bleed backgrounds with content centered at a max width (desktop).
+   Section backgrounds span the viewport; horizontal padding grows to keep
+   the content column centered — matches the lauxcreatives layout. */
+@media (min-width:961px){
+  [data-screen-label="Nav"],[data-screen-label="Hero"],
+  #work,#photography,#weddings,#about,#contact,
+  #brands>div:first-child,#brands>div:last-child{
+    padding-left:max(56px,calc((100% - 1600px)/2))!important;
+    padding-right:max(56px,calc((100% - 1600px)/2))!important;
+  }
+}
 /* Tablet and below */
 @media (max-width:960px){
   [data-screen-label="Nav"]{padding:18px 30px!important}
@@ -91,7 +102,7 @@ img{max-width:100%}
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="width:100%;max-width:1440px;margin:0 auto;background:#141210;color:#f5f1ec">
+<div ref="{{ rootRef }}" style="width:100%;background:#141210;color:#f5f1ec">
 
   <header data-screen-label="Nav" style="display:flex;align-items:center;justify-content:space-between;padding:26px 56px;border-bottom:1px solid rgba(245,241,236,.08);position:sticky;top:0;z-index:20;background:rgba(20,18,16,.82);backdrop-filter:blur(10px)">
     <a href="#top" onClick="{{ scrollTop }}" style="font: 700 17px 'Space Grotesk',sans-serif; letter-spacing: .02em; font-size: 30px; cursor: pointer">evanlaux<span style="color:#ff5c1a">.</span>com</a>
