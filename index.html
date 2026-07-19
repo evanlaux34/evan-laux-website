@@ -48,7 +48,8 @@ img{max-width:100%}
    the content column centered — matches the lauxcreatives layout. */
 @media (min-width:961px){
   [data-screen-label="Nav"],[data-screen-label="Hero"],
-  #work,#photography,#weddings,#about,#contact,
+  #photography,#weddings,#about,#contact,
+  #work>div:first-child,#work>div:last-child,
   #brands>div:first-child,#brands>div:last-child{
     padding-left:max(56px,calc((100% - 1600px)/2))!important;
     padding-right:max(56px,calc((100% - 1600px)/2))!important;
@@ -80,7 +81,9 @@ img{max-width:100%}
   [data-screen-label="Nav"]{padding:18px 30px!important}
   [data-screen-label="Nav"] nav{gap:22px!important}
   .cards-3{grid-template-columns:1fr 1fr!important}
-  #work,#photography{padding:64px 30px!important}
+  #photography{padding:64px 30px!important}
+  #work{padding:64px 0!important}
+  #work>div:first-child,#work>div:last-child{padding-left:30px!important;padding-right:30px!important}
   #weddings{grid-template-columns:1fr!important;gap:40px!important;padding:64px 30px!important}
   #about{grid-template-columns:1fr!important;gap:36px!important;padding:64px 30px!important}
   #contact{padding:64px 30px 56px!important}
@@ -100,14 +103,15 @@ img{max-width:100%}
   [data-screen-label="Nav"] > a:first-child{font-size:22px!important}
   [data-screen-label="Nav"] > a:last-child{padding:10px 16px!important;font-size:12px!important}
   .cards-3{grid-template-columns:1fr!important;gap:16px!important}
-  #work,#photography,#weddings,#about{padding:52px 20px!important}
+  #photography,#weddings,#about{padding:52px 20px!important}
+  #work{padding:52px 0!important}
   #contact{padding:52px 20px 44px!important}
   #brands{padding:52px 0!important}
-  #brands>div:first-child,#brands>div:last-child{padding-left:20px!important;padding-right:20px!important}
+  #work>div:first-child,#work>div:last-child,#brands>div:first-child,#brands>div:last-child{padding-left:20px!important;padding-right:20px!important}
   #work h2,#brands h2,#photography h2,#weddings h2{font-size:36px!important}
   #about h2{font-size:34px!important}
   #contact h2{font-size:46px!important}
-  .brand-card{width:80vw!important}
+  .brand-card,.work-card{width:80vw!important}
   .wed-grid{grid-template-rows:repeat(2,150px)!important}
   #contact>div:last-of-type{flex-direction:column!important;gap:10px!important;align-items:flex-start!important;margin-top:52px!important}
 }
@@ -157,23 +161,28 @@ img{max-width:100%}
     </div>
   </div>
 
-  <div id="work" data-screen-label="Featured Work" style="padding:90px 56px 70px">
-    <div data-reveal="" style="margin-bottom:40px">
-      <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">Featured Work</div>
-      <h2 style="margin:12px 0 0;font:700 56px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.02em">Selected frames</h2>
-      <p style="margin:16px 0 0;max-width:460px;font:400 16px/1.6 'Space Grotesk',sans-serif;color:rgba(245,241,236,.6)">A cross-section of recent work — live events, weddings, and the places in between. Brand &amp; design case studies coming soon.</p>
+  <div id="work" data-screen-label="Featured Work" style="padding:90px 0 70px">
+    <div data-reveal="" style="padding:0 56px;margin-bottom:36px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
+      <div>
+        <div style="font:400 13px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase">Featured Work</div>
+        <h2 style="margin:12px 0 0;font:700 56px/1.05 'Space Grotesk',sans-serif;letter-spacing:-.02em">Selected frames</h2>
+        <p style="margin:16px 0 0;max-width:460px;font:400 16px/1.6 'Space Grotesk',sans-serif;color:rgba(245,241,236,.6)">A cross-section of recent work — live events, weddings, and the places in between. Brand &amp; design case studies coming soon.</p>
+      </div>
+      <div style="font:400 12px 'Space Mono',monospace;color:rgba(245,241,236,.5);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap">Drag to explore →</div>
     </div>
-    <div class="cards-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-      <sc-for list="{{ featured }}" as="w" hint-placeholder-count="6">
-        <div data-reveal="" style="display:flex;flex-direction:column;gap:14px">
-          <image-slot id="{{ w.id }}" src="{{ w.src }}" shape="rounded" radius="14" placeholder="{{ w.tag }}" style="width:100%;height:340px;background:#1d1a17"></image-slot>
-          <div style="display:flex;justify-content:space-between;align-items:baseline">
-            <div style="font:600 19px 'Space Grotesk',sans-serif">{{ w.title }}</div>
-            <div style="font:400 11px 'Space Mono',monospace;color:rgba(245,241,236,.5)">{{ w.year }}</div>
+    <div style="overflow-x:auto;padding:4px 56px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch">
+      <div style="display:flex;gap:24px;width:max-content">
+        <sc-for list="{{ featured }}" as="w" hint-placeholder-count="6">
+          <div class="work-card" style="scroll-snap-align:start;flex:none;width:400px;display:flex;flex-direction:column;gap:14px">
+            <image-slot id="{{ w.id }}" src="{{ w.src }}" shape="rounded" radius="14" placeholder="{{ w.tag }}" style="width:100%;height:340px;background:#1d1a17"></image-slot>
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <div style="font:600 19px 'Space Grotesk',sans-serif">{{ w.title }}</div>
+              <div style="font:400 11px 'Space Mono',monospace;color:rgba(245,241,236,.5)">{{ w.year }}</div>
+            </div>
+            <div style="font:400 12px 'Space Mono',monospace;color:#ff5c1a;margin-top:-8px">{{ w.tag }}</div>
           </div>
-          <div style="font:400 12px 'Space Mono',monospace;color:#ff5c1a;margin-top:-8px">{{ w.tag }}</div>
-        </div>
-      </sc-for>
+        </sc-for>
+      </div>
     </div>
   </div>
 
