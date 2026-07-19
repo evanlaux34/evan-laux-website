@@ -58,24 +58,27 @@ img{max-width:100%}
 @media (min-width:961px){
   .hero-glow{width:1300px!important;height:1300px!important;top:-520px!important;left:-460px!important}
 }
-/* Mid widths: stack the hero to one full-width column before the two-column
-   layout squeezes the title, so "Evan Laux" always fits on one line. */
-@media (min-width:961px) and (max-width:1439px){
-  [data-screen-label="Hero"]{grid-template-columns:1fr!important;min-height:0!important;gap:20px!important;padding-bottom:0!important}
-  [data-screen-label="Hero"] h1{font-size:clamp(88px,9.5vw,120px)!important}
-  .hero-media{height:400px!important;min-height:0!important;overflow:visible!important}
-  .hero-portrait{position:relative!important;transform:translateY(120px)!important;width:auto!important;height:580px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:bottom center!important;margin:0 auto!important}
-  .hero-disc{width:380px!important;height:380px!important}
+/* HERO — phone (<=767): single column, portrait centered on a big orange circle */
+@media (max-width:767px){
+  [data-screen-label="Hero"]{grid-template-columns:1fr!important;min-height:0!important;padding:40px 20px 0!important;gap:16px!important}
+  [data-screen-label="Hero"] h1{font-size:clamp(54px,15.5vw,96px)!important}
+  .hero-media{height:300px!important;min-height:0!important;overflow:visible!important}
+  .hero-portrait{position:relative!important;transform:translateY(90px)!important;width:auto!important;height:430px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:bottom center!important;margin:0 auto!important}
+  .hero-disc{width:410px!important;height:410px!important;bottom:-250px!important}
+}
+/* HERO — tablet & small desktop (768-1439): two columns, portrait on the RIGHT,
+   fluid title so "Evan Laux" still fits on one line. */
+@media (min-width:768px) and (max-width:1439px){
+  [data-screen-label="Hero"]{grid-template-columns:1fr min(32vw,460px)!important;gap:min(2.8vw,40px)!important;min-height:0!important;align-items:center!important}
+  [data-screen-label="Hero"] h1{font-size:clamp(58px,7.7vw,120px)!important}
+  .hero-media{height:min(39vw,560px)!important;min-height:0!important}
+  .hero-disc{width:min(27vw,390px)!important;height:min(27vw,390px)!important}
+  .hero-portrait{height:min(47vw,676px)!important;width:auto!important;max-width:none!important;max-height:none!important;transform:translate(0,min(11.5vw,165px))!important;object-fit:contain!important;object-position:bottom center!important;margin:0 auto!important;position:relative!important}
 }
 /* Tablet and below */
 @media (max-width:960px){
   [data-screen-label="Nav"]{padding:18px 30px!important}
   [data-screen-label="Nav"] nav{gap:22px!important}
-  [data-screen-label="Hero"]{grid-template-columns:1fr!important;min-height:0!important;padding:60px 30px 0!important;gap:16px!important}
-  [data-screen-label="Hero"] h1{font-size:100px!important}
-  .hero-media{height:360px!important;min-height:0!important;overflow:visible!important}
-  .hero-portrait{position:relative!important;transform:translateY(110px)!important;width:auto!important;height:520px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:bottom center!important;margin:0 auto!important}
-  .hero-disc{width:320px!important;height:320px!important}
   .cards-3{grid-template-columns:1fr 1fr!important}
   #work,#photography{padding:64px 30px!important}
   #weddings{grid-template-columns:1fr!important;gap:40px!important;padding:64px 30px!important}
@@ -96,11 +99,6 @@ img{max-width:100%}
   [data-screen-label="Nav"] nav{display:none!important}
   [data-screen-label="Nav"] > a:first-child{font-size:22px!important}
   [data-screen-label="Nav"] > a:last-child{padding:10px 16px!important;font-size:12px!important}
-  [data-screen-label="Hero"]{padding:40px 20px 0!important}
-  [data-screen-label="Hero"] h1{font-size:clamp(54px,15.5vw,90px)!important}
-  .hero-media{min-height:0!important;height:300px!important;overflow:visible!important}
-  .hero-portrait{position:relative!important;transform:translateY(90px)!important;width:auto!important;height:430px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:bottom center!important;margin:0 auto!important}
-  .hero-disc{width:260px!important;height:260px!important}
   .cards-3{grid-template-columns:1fr!important;gap:16px!important}
   #work,#photography,#weddings,#about{padding:52px 20px!important}
   #contact{padding:52px 20px 44px!important}
