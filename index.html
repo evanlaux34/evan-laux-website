@@ -54,6 +54,10 @@ img{max-width:100%}
     padding-right:max(56px,calc((100% - 1600px)/2))!important;
   }
 }
+/* Desktop only: enlarge the top-left hero glow, keep it anchored in the corner */
+@media (min-width:961px){
+  .hero-glow{width:1300px!important;height:1300px!important;top:-520px!important;left:-460px!important}
+}
 /* Mid widths: stack the hero to one full-width column before the two-column
    layout squeezes the title, so "Evan Laux" always fits on one line. */
 @media (min-width:961px) and (max-width:1439px){
@@ -123,7 +127,7 @@ img{max-width:100%}
   </header>
 
   <div data-screen-label="Hero" style="position:relative;overflow:hidden;padding:80px 56px 64px;min-height:640px;display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center">
-    <div style="position: absolute; top: -220px; left: -180px; right: auto; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle,rgba(255,92,26,.22),transparent 65%); pointer-events: none; z-index: 0"></div>
+    <div class="hero-glow" style="position: absolute; top: -220px; left: -180px; right: auto; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle,rgba(255,92,26,.22),transparent 65%); pointer-events: none; z-index: 0"></div>
 
     <div style="position:relative;z-index:2">
       <div style="font:400 14px 'Space Mono',monospace;color:#ff5c1a;letter-spacing:.14em;text-transform:uppercase;animation:heroUp .7s .05s cubic-bezier(.2,.6,.2,1) both">Hey, I'm</div>
